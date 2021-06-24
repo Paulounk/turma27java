@@ -3,17 +3,20 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro seg, minutos, hora
-		
-	     escreva("Digite o tempo em segundo ")
-          leia(seg)
+		inteiro numero
 
-          hora = (seg / 3600)
-          minutos = (seg % 3600) / 60
-          seg = (seg % 3600) % 60
-          
-          escreva("Tempo em horas: " + hora + "\nTempo em mintos: " + minutos + "\nTempo em segundos: " + seg)     
-	     
+		escreva("Por gentileza digite um numero: ")
+		leia(numero)
+
+		se(numero % 2 == 0){
+
+			escreva("O numero " + numero + " é par")
+
+		}
+		senao{
+			escreva("O numero " + numero + " é impar")
+		}
+		
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -21,7 +24,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 370; 
+ * @POSICAO-CURSOR = 259; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

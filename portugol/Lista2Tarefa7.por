@@ -3,17 +3,24 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro seg, minutos, hora
-		
-	     escreva("Digite o tempo em segundo ")
-          leia(seg)
+		inteiro base, altura, area
 
-          hora = (seg / 3600)
-          minutos = (seg % 3600) / 60
-          seg = (seg % 3600) % 60
+		escreva("Digite a base do tringulo: ")
+		leia(base)
+
+		escreva("Digite a altura do tringulo: ")
+		leia(altura)
+
+          se(base > 0 e altura > 0){
+
+          	area = (base * altura) / 2
+          	escreva("O valor da area é: " + area)
+          }
+          senao{
+          	escreva("Numero invalido!")
+          }
           
-          escreva("Tempo em horas: " + hora + "\nTempo em mintos: " + minutos + "\nTempo em segundos: " + seg)     
-	     
+		
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -21,7 +28,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 370; 
+ * @POSICAO-CURSOR = 407; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
