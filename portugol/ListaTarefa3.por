@@ -3,21 +3,17 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro nota1, nota2, nota3, media
-
-
-          escreva("Digite a primeira nota: ")
-          leia(nota1)
-
-          escreva("Digite a segunda nota: ")
-          leia(nota2)
-
-          escreva("Digite a terceira nota: ")
-          leia(nota3)
-          
-		media = ((2*nota1) + (nota2*3) + (nota3*5)) / 10
-		escreva("Sua média é: " + media)
+		inteiro seg, minutos, hora, r
 		
+	     escreva("Digite o tempo em segundo ")
+          leia(seg)
+
+          hora = (seg / 3600)
+          minutos = (seg % 3600) / 60
+          seg = (seg % 3600) % 60
+          
+          escreva("Tempo em horas: " + hora + "\nTempo em mintos: " + minutos + "\nTempo em segundos: " + seg)     
+	     
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -25,7 +21,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 381; 
+ * @POSICAO-CURSOR = 380; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

@@ -3,21 +3,14 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro nota1, nota2, nota3, media
+		real valorCons, custoFabr, percDistr = 28, imposto = 45, custoCons
 
+		escreva("Digite o valor de custo de Fabrica: ")
+          leia(valorCons)
 
-          escreva("Digite a primeira nota: ")
-          leia(nota1)
+          custoFabr = valorCons + (valorCons * 73) / 100
 
-          escreva("Digite a segunda nota: ")
-          leia(nota2)
-
-          escreva("Digite a terceira nota: ")
-          leia(nota3)
-          
-		media = ((2*nota1) + (nota2*3) + (nota3*5)) / 10
-		escreva("Sua média é: " + media)
-		
+          escreva(custoFabr)	
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -25,7 +18,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 381; 
+ * @POSICAO-CURSOR = 279; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
