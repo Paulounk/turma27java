@@ -1,6 +1,8 @@
 programa
 {
-	
+	/*   2. Faça um sistema que leia a idade de uma pessoa expressa em dias e mostre-a expressa em anos, meses e dias. 
+          Usuário informa o ano, o mês e o dia e você diz a quantidade de dias total.  */
+
 	funcao inicio()
 	{
 		inteiro idade, ano, mes, dia, dias
@@ -23,7 +25,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 278; 
+ * @POSICAO-CURSOR = 349; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

@@ -3,15 +3,15 @@ programa
 	
 	funcao inicio()
 	{
+          const inteiro habitantes = 3
 		inteiro mediaSalarioPopulacao=0
 		inteiro mediaFilhosPopulacao=0
 		inteiro maiorSalario=0
-		inteiro percPessoasSalariosAte100=0
+		inteiro percPessoasSalariosAte100=0
 		inteiro numFilhosHabitantes=0
 		inteiro salarioHabitantes=0
 		inteiro somatorioSalario=0
 		inteiro somatorioFilhos=0
-		const inteiro habitantes = 3
 		inteiro pessoasSalarioAte100
 
          para(inteiro x=0;x<3;x++)
@@ -58,7 +58,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 318; 
+ * @POSICAO-CURSOR = 387; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
