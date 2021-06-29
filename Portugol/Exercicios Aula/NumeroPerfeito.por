@@ -1,5 +1,8 @@
 programa
 {
+	/* Um numero inteiro positivo, n, é dito perfeito se a soma de seus divisores, excetuando-se o proprio numero, é igual ao proprio numero.
+	   Por exemplo: 6 é um numero perfeito, já que 6 = 1 + 2 + 3. Escreva um algoritmo que determina todos os números perfeitos 
+	   existente entre 2 e 1000.  */
 	
 	funcao inicio()
 	{
@@ -13,13 +16,15 @@ programa
 
 		enquanto(valor < x){
 			se( x % valor == 0){
+				escreva(valor + "\n")
 				divisores+=valor
+				
 			}
 			valor++ //incremento
 		}
 
 		se (divisores == x){
-			escreva(x+" é perfeito \n")
+			escreva("\n" + x +" é perfeito \n")
 		} senao {
 			escreva(x+" não é perfeito \n")
 		}
@@ -35,7 +40,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 392; 
+ * @POSICAO-CURSOR = 506; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
