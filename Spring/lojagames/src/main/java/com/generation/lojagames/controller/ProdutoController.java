@@ -2,6 +2,7 @@ package com.generation.lojagames.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,6 +22,7 @@ import com.generation.lojagames.repository.ProdutoRepository;
 @CrossOrigin("*")
 public class ProdutoController {
 
+	@Autowired
 	private ProdutoRepository repository;
 	
 	@GetMapping
@@ -35,10 +37,10 @@ public class ProdutoController {
 				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());		
 	}
 	
-	@GetMapping("/nome/{nome}")
-	public ResponseEntity<List<Produto>> getByNome(@PathVariable String nome){
+	@GetMapping("/preco/{preco}")
+	public ResponseEntity<List<Produto>> getByNome(@PathVariable double preco){
 		
-		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome));	
+		return ResponseEntity.ok(repository.findAllByPreco(preco));	
 	}
 	
 
