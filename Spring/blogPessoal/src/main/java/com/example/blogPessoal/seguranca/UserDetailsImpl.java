@@ -16,10 +16,11 @@ public class UserDetailsImpl implements UserDetails {
 	
 
 	public UserDetailsImpl(Usuario user) {
-		super();
 		this.userName = userName;
 		this.password = password;
 	}
+	
+	public UserDetailsImpl() {}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

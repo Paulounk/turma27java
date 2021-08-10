@@ -19,7 +19,7 @@ import com.example.blogPessoal.model.Tema;
 import com.example.blogPessoal.repository.TemaRepository;
 
 @RestController
-@RequestMapping("/tema")
+@RequestMapping("/temas")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class TemaController {
 
