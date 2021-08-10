@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -44,7 +43,7 @@ public class UsuarioControllerTest {
 	public void start() {
 
 		LocalDate dataAdmin = LocalDate.parse("1990-07-22", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        usuarioAdmin = new Usuario(0L, "Administrador", "admin@email.com.br", "admin123", dataAdmin);
+        usuarioAdmin = new Usuario(0L,"Administrador", "admin@hotmail.com.br", "admin123", dataAdmin);
 
 		if(!usuarioRepository.findByUsuario(usuarioAdmin.getUsuario()).isPresent()) {
 
@@ -54,11 +53,10 @@ public class UsuarioControllerTest {
 		}
 		
 		LocalDate dataPost = LocalDate.parse("2000-07-22", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        usuario = new Usuario(0L, "Jose Antunes", "jose@email.com.br", "13465278", dataPost);
+        usuario = new Usuario(0L,"Jose Oliveira", "jose@hotmail.com.br", "13465278", dataPost);
 
         LocalDate dataPut = LocalDate.parse("2000-07-23", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        usuarioUpdate = new Usuario(0L, "Gabriel de Souza", "gabriel@email.com.br", "souza123", dataPut);
-        
+        usuarioUpdate = new Usuario(2L,"Gabriel de Souza", "gabriel@email.com.br", "souza123", dataPut);
 	}
 
 	@Test
@@ -81,8 +79,8 @@ public class UsuarioControllerTest {
 	public void deveMostrarTodosUsuarios() {
 
 		ResponseEntity<String> resposta = testRestTemplate
-			.withBasicAuth("admin@email.com.br", "admin123")
-			.exchange("/usuarios", HttpMethod.GET, null, String.class);
+			.withBasicAuth("admin@hotmail.com.br", "admin123")
+			.exchange("/usuarios/all", HttpMethod.GET, null, String.class);
 
 		assertEquals(HttpStatus.OK, resposta.getStatusCode());
 	}
@@ -95,8 +93,25 @@ public class UsuarioControllerTest {
 		HttpEntity<Usuario> request = new HttpEntity<Usuario>(usuarioUpdate);
 
 		ResponseEntity<Usuario> resposta = testRestTemplate
-			.withBasicAuth("jose@email.com.br", "13465278")
+			.withBasicAuth("admin@hotmail.com.br", "admin123")
 			.exchange("/usuarios/alterar", HttpMethod.PUT, request, Usuario.class);
+
+		assertEquals(HttpStatus.OK, resposta.getStatusCode());
+		
+	}
+	
+	
+	//TESTE ADICIONAL BY PAULO LOPES
+	@Test
+    @Order(4)
+	@DisplayName("Login do Usuário!")
+	public void deveRealizarLoginUsuario() {
+
+		HttpEntity<Usuario> request = new HttpEntity<Usuario>(usuario);
+
+		ResponseEntity<Usuario> resposta = testRestTemplate
+			.withBasicAuth("admin@hotmail.com.br", "admin123")
+			.exchange("/usuarios/login", HttpMethod.POST, request, Usuario.class);
 
 		assertEquals(HttpStatus.OK, resposta.getStatusCode());
 		

@@ -1,4 +1,4 @@
-package com.example.blogPessoal.seguranca;
+package com.example.blogPessoal.security;
 
 import java.util.Optional;
 

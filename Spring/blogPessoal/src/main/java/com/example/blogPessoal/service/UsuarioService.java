@@ -22,7 +22,7 @@ public class UsuarioService {
 	@Autowired
 	private UsuarioRepository repository;
 
-	public Usuario CadastrarUsuario(Usuario usuario) {
+	public Usuario cadastrarUsuario(Usuario usuario) {
 
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
@@ -59,13 +59,12 @@ public class UsuarioService {
 		} else {
 
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuário não encontrado!", null);
-
 		}
 
 	}
 	
 	
-	public Optional<UserLogin> Logar(Optional<UserLogin> user) {
+	public Optional<UserLogin> loginUsuario(Optional<UserLogin> user) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		Optional<Usuario> usuario = repository.findByUsuario(user.get().getUsuario());
 

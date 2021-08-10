@@ -1,4 +1,4 @@
-package com.example.blogPessoal.seguranca;
+package com.example.blogPessoal.security;
 
 import java.util.Collection;
 
@@ -16,8 +16,8 @@ public class UserDetailsImpl implements UserDetails {
 	
 
 	public UserDetailsImpl(Usuario user) {
-		this.userName = userName;
-		this.password = password;
+		this.userName =  user.getUsuario();
+		this.password =  user.getSenha();
 	}
 	
 	public UserDetailsImpl() {}
