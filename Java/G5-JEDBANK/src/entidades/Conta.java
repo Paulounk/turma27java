@@ -1,28 +1,34 @@
 package entidades;
 
-public class Conta {
+import java.util.Scanner;
+
+public abstract class Conta {
 	
-	//atributos
+
+	Scanner leia = new Scanner(System.in);
+	
+	//ATRIBUTOS
 	private int numero;
 	private String nomeCliente;
-	private double saldo;
+	protected double saldo;
+	protected double valor;
+	private char sair;
+	private char op;
 	
-	//construtor
+	//CONSTRUTOR
 	public Conta(int numero, String nomeCliente) {
 		super();
 		this.numero = numero;
-		this.nomeCliente = nomeCliente;
+		this.nomeCliente = nomeCliente;		
 	}
 	
 	//ENCAPSULAMENTO - GETTERS AND SETTERS
 	public int getNumero() {
 		return numero;
 	}
-	/*
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
-	*/
 
 	public String getNomeCliente() {
 		return nomeCliente;
@@ -35,37 +41,67 @@ public class Conta {
 	public double getSaldo() {
 		return saldo;
 	}
-/*
-	public void setSaldo(double saldo) {
-		this.saldo = saldo;
-	}
-*/	
-	//METODOS
-	
+
+
+	//METODOS PROPRIOS
 	public void credito(double valorCredito) {
-		
+		if(valorCredito <=0 ) {
+			System.out.println("IMPOSSIVEL REALIZAR OPERAÇÃO!");
+		}
+		else{
 		this.saldo = this.saldo + valorCredito;
-		
+		}
 	}
 	
+
 	public void debito(double valorDebito) {
 		if(valorDebito <=0 ) {
-			System.out.println("Impossivel realizar operação....");
+			System.out.println("IMPOSSIVEL REALIZAR OPERAÇÃO!");
 		}
 		
 		else if (valorDebito>saldo) {
-			System.out.println("Saldo insulficiente....");
+			System.out.println("SALDO INSUFICIENTE!");
 		} else {
 			this.saldo = this.saldo - valorDebito;
-			System.out.println("Debito realizado!!!");
+			System.out.println("DEBITO REALIZADO!");
+			System.out.println("SALDO ATUAL: R$ " + saldo);
 		}
-			
-		
-		
+	
 	}
-	
-	
-	
+	public void movimentacao() {
+		System.out.print("MOVIMENTO: DEBITO(D) - CREDITO(C) - SAIR(S): ");	
+		op = leia.next().toUpperCase().charAt(0);
+		
+		while(op != 'D' && op != 'C' && op != 'S'){
+			System.out.print("DIGITE UMA OPÇÃO VALIDA: ");
+			op = leia.next().toUpperCase().charAt(0);
+		}
+		
+		if(op == 'D') {
+			System.out.print("QUAL O VALOR: R$ ");
+			valor = leia.nextDouble();
+			debito(valor);
+		}
+		else if(op == 'C') {
+			System.out.print("QUAL O VALOR: R$ ");
+			valor = leia.nextDouble();
+			credito(valor);
+			System.out.println("SALDO ATUAL: " + getSaldo());
+		}
+		else if(op == 'S') {
+			sair = 'S';
+		}
+	}
+
+	public char getSair() {
+		return sair;
+	}
+
+	public void setSair(char sair) {
+		this.sair = sair;
+	}
+    
+
 	
 	
 	
